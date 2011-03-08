@@ -31,5 +31,5 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # end
 
 gem 'inherited_resources', '~> 1.2.1'
-gem "payday", "1.0.0beta2"
+gem "payday", "1.0.0beta3"
 gem "dynamic_form"
