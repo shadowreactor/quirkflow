@@ -1,0 +1,60 @@
+<h1>Invoice #<%= @invoice.id %></h1>
+
+<div>
+  <strong>Company Name:</strong> <%= @invoice.company_name %>
+</div>
+
+<div>
+  <strong>Created At:</strong> <%= @invoice.created_at %>
+</div>
+
+<div>
+  <strong>Due On:</strong> <%= @invoice.due_on %>
+</div>
+
+<div>
+  <strong>Paid At:</strong>
+  
+  <% if @invoice.paid? %>
+    <%= @invoice.paid_at %>
+  <% else %>
+    Unpaid (Mark as Paid)
+  <% end %>
+</div>
+
+<h3>Total: <%= number_to_currency(@invoice.total) %></h3>
+
+<h3><%= link_to "View PDF", invoice_url(@invoice, :format => :pdf) %></h3>
+
+<div>
+  <%= link_to "Edit Invoice Details", edit_invoice_url(@invoice) %>
+</div>
+
+<h2>Line Items</h2>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Quantity</th>
+    <th>Unit Price</th>
+    <th>Amount</th>
+    <th></th>
+  </tr>
+  <% if @invoice.line_items.empty? %>
+    <tr><td colspan="5"><em>There aren't any line items on this invoice.</em></td></tr>
+  <% else %>
+    <% @invoice.line_items.each do |line_item| %>
+      <tr>
+        <td><%= line_item.description %></td>
+        <td><%= line_item.quantity %></td>
+        <td><%= line_item.price %></td>
+        <td><%= number_to_currency(line_item.amount) %></td>
+        <td><%= link_to "Edit", edit_invoice_line_item_url(@invoice, line_item) %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<div>
+  <%= link_to "Add Line Item", new_invoice_line_item_url(@invoice) %>
+</div>
