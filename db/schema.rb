@@ -10,10 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110307202831) do
+ActiveRecord::Schema.define(:version => 20110308040450) do
 
   create_table "invoices", :force => true do |t|
-    t.date     "due_on"
+    t.date     "due_at"
     t.date     "paid_at"
     t.decimal  "total"
     t.string   "company_name"

@@ -15,6 +15,21 @@ h1 a {
 
 #content {
 	padding: 10px;
+	margin-bottom: 50px;
+}
+
+#footer {
+	position: absolute;
+	color: #fff;
+	background: #000;
+	bottom: 0;
+	padding: 10px 0;
+	font-size: .8em;
+	margin-top: 30px;
+	width: 100%;
+}
+#footer div {
+	padding: 0 10px;
 }
 
 /* table styles */
@@ -29,7 +44,6 @@ table td, table th {
 	border: 1px solid #ccc;
 	padding: 4px;
 }
-
 
 /* form styles */
 form div {
