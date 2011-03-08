@@ -45,7 +45,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    payday (1.0.0beta2)
+    payday (1.0.0beta3)
       prawn (~> 0.11.1.pre)
     pdf-reader (0.9.1)
       Ascii85 (>= 0.9)
@@ -86,6 +86,6 @@ PLATFORMS
 DEPENDENCIES
   dynamic_form
   inherited_resources (~> 1.2.1)
-  payday (= 1.0.0beta2)
+  payday (= 1.0.0beta3)
   rails (= 3.0.3)
   sqlite3-ruby
