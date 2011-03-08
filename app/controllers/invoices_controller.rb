@@ -1,4 +1,5 @@
 class InvoicesController < InheritedResources::Base
+  custom_actions :resource => :mark_paid
   
   def show
     show! do |format|
@@ -11,5 +12,15 @@ class InvoicesController < InheritedResources::Base
   
   def create
     create! { invoices_url }
+  end
+  
+  def mark_paid
+    mark_paid! do
+      if !@invoice.paid?
+        @invoice.update_attribute(:paid_at, Time.now)
+      end
+    
+      redirect_to @invoice and return
+    end
   end
 end

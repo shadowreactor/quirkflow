@@ -1,0 +1,58 @@
+html, body {
+	margin: 0;
+	font-family: helvetica, arial, sans-serif;
+}
+
+h1 {
+	background: #27138B;
+	margin: 0;
+	padding: 20px 10px;
+}
+h1 a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#content {
+	padding: 10px;
+}
+
+/* table styles */
+table {
+	border-collapse: collapse;
+	margin-bottom: 10px;
+}
+table th {
+	background: #eee;
+}
+table td, table th {
+	border: 1px solid #ccc;
+	padding: 4px;
+}
+
+
+/* form styles */
+form div {
+	margin-bottom: 10px;
+}
+
+form label {
+	display: block;
+}
+
+/* error styling */
+div.errorExplanation {
+	border: 2px solid #c00;
+}
+
+div.errorExplanation h2 {
+	margin: 0;
+	padding: 4px;
+	color: #fff;
+	background: #c00;
+	font-size: 1.2em;
+}
+
+div.errorExplanation p {
+	padding: 4px;
+}

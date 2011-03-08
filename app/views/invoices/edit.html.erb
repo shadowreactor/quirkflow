@@ -1,6 +1,8 @@
-<h1>Edit Invoice</h1>
+<h2>Edit Invoice</h2>
 
 <% form_for @invoice do |f| %>
+  <%= f.error_messages %>
+  
   <%= render :partial => 'form', :locals => { :f => f } %>
-  <%= f.submit "Update Invoice" %>
+  <%= f.submit "Update Invoice" %> or <%= link_to "Cancel", :back %>
 <% end %>

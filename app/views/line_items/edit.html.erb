@@ -1,6 +1,8 @@
-<h1>Edit Line Item for Invoice <%= @invoice.id %></h1>
+<h2>Edit Line Item for Invoice <%= @invoice.id %></h2>
 
 <% form_for [@invoice, @line_item] do |f| %>
+  <%= f.error_messages %>
+  
   <%= render :partial => 'form', :locals => { :f => f } %>
-  <%= f.submit "Update Line Item" %>
+  <%= f.submit "Update Line Item" %> or <%= link_to "Cancel", :back %>
 <% end %>
