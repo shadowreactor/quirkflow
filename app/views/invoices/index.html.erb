@@ -1,5 +1,4 @@
 <h2>Invoices</h2>
-
 <% if @invoices.empty? %>
   <em>There aren't any invoices.</em>
 <% else %>
@@ -14,7 +13,7 @@
     <% @invoices.each do |invoice| %>
       <tr>
         <td><%= link_to invoice.id, invoice %></td>
-        <td><%= invoice.company_name %></td>
+        <td><%= invoice.account.name %></td>
         <td><%= invoice.created_at %></td>
         <td><%= invoice.due_at %></td>
         <td><%= invoice.paid_at %></td>
@@ -22,5 +21,6 @@
     <% end %>
   </table>
 <% end %>
-
-<%= link_to "New Invoice", new_invoice_url %>
+<div class='clear'><!-- --></div>
+<br />
+<%= button_to "Create a New Invoice", new_invoice_url, :method => :get %>

@@ -1,6 +1,6 @@
-<div>
-  <%= f.label :company_name %>
-  <%= f.text_field :company_name %>
+<div class='field'>
+  <%= f.label :account_id, 'Select an Account' %>
+  <%= f.select :account_id, options_for_select(Account.all.map { |a| [ a.name, a.id ] }) %>
 </div>
 
 <div>

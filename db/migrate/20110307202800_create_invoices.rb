@@ -1,13 +1,11 @@
 class CreateInvoices < ActiveRecord::Migration
   def self.up
     create_table :invoices do |t|
-      t.date :due_on
+      t.integer :account_id
+      t.string :status, :default => 'draft'
+      t.date :due_at
       t.date :paid_at
-      
       t.decimal :total
-      
-      t.string :company_name
-      
       t.timestamps
     end
   end

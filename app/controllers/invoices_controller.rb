@@ -5,7 +5,8 @@ class InvoicesController < InheritedResources::Base
     show! do |format|
       format.html
       format.pdf do
-        send_data(@invoice.render_pdf, :filename => "Invoice #{@invoice.id}.pdf", :type => "application/pdf", :disposition => "inline")
+        data = @invoice.render_pdf
+        send_data(data, :filename => "Invoice #{@invoice.id}.pdf", :type => "application/pdf", :disposition => "inline")
       end
     end
   end

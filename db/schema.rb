@@ -10,22 +10,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110308040450) do
+ActiveRecord::Schema.define(:version => 20110805030141) do
+
+  create_table "accounts", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "attn"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "phone"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "invoices", :force => true do |t|
+    t.integer  "account_id"
+    t.string   "status",                                    :default => "draft"
     t.date     "due_at"
     t.date     "paid_at"
-    t.decimal  "total"
-    t.string   "company_name"
+    t.decimal  "total",      :precision => 10, :scale => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "line_items", :force => true do |t|
-    t.decimal  "price"
-    t.string   "description"
-    t.integer  "quantity"
     t.integer  "invoice_id"
+    t.string   "description"
+    t.float    "price"
+    t.float    "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

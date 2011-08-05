@@ -1,0 +1,11 @@
+<div class='account'>
+  <span class='name'><%= account.name %></span> <%= conditional_field account, :attn -%>
+  <div class='clear'><!-- --></div>
+  <%#= conditional_field account, :address_1 -%>
+  <%#= conditional_field account, :address_2 -%>
+  <%= conditional_field account, :city_state -%>
+  <%= conditional_field account, :formatted_phone -%>
+  <% if account.email.present? -%>
+    <%= link_to account.email, "mailto:#{account.email}" %>
+  <% end -%>
+</div>

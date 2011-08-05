@@ -1,0 +1,11 @@
+<h2>Accounts</h2>
+
+<% if @accounts.empty? %>
+  <em>There aren't any accounts.</em>
+<% else %>
+  <%= render @accounts %>
+<% end %>
+
+<div class='clear'><!-- --></div>
+<br />
+<%= button_to "Add a New Account", new_account_path, :method => :get %>
